@@ -1,5 +1,10 @@
-SVN - 과거 revision으로 돌아가기
-============================
+---
+title: "SVN - 과거 revision으로 돌아가기"
+layout: post
+category : dev.vcs
+tags : [vcs, svn]
+---
+{% include JB/setup %}
 
 개요
 ----

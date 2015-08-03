@@ -1,5 +1,10 @@
-SVN commit history를 Git로 옮기기
-===============================
+---
+title: "SVN commit history를 Git로 옮기기"
+layout: post
+category : dev.vcs
+tags : [vcs, svn, git]
+---
+{% include JB/setup %}
 
 개요
 ----
