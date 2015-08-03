@@ -1,5 +1,10 @@
-UIView의 viewWithTag:
-====================
+---
+title: "UIView의 viewWithTag:"
+layout: post
+category : dev.client
+tags : [ios, viewwithtag]
+---
+{% include JB/setup %}
 
 viewWithTag: 메소드는 property로 View를 추가하긴 귀찮을 정도로 간단한
 View들을 처리할 때 굉장히 편한 메소드입니다. 하지만 몇 가지 문제가

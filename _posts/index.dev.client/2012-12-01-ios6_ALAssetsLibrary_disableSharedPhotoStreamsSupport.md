@@ -1,5 +1,10 @@
-ALAssetsLibrary disableSharedPhotoStreamsSupport
-================================================
+---
+title: "ALAssetsLibrary disableSharedPhotoStreamsSupport"
+layout: post
+category : dev.client
+tags : [ios6, alassetslibrary]
+---
+{% include JB/setup %}
 
 개요
 ----

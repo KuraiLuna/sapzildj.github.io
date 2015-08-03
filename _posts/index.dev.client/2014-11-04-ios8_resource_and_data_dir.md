@@ -1,5 +1,10 @@
-Resource디렉토리와 Data 디렉토리 경로 분리
-===================================
+---
+title: "Resource디렉토리와 Data 디렉토리 경로 분리"
+layout: post
+category : dev.client
+tags : [ios8, directory]
+---
+{% include JB/setup %}
 
 issue 발생
 ---------

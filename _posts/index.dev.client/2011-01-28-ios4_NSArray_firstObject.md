@@ -1,5 +1,10 @@
-NSArray의 firstObject
-=====================
+---
+title: "NSArray의 firstObject"
+layout: post
+category : dev.client
+tags : [ios, nsarray]
+---
+{% include JB/setup %}
 
 개요
 ----

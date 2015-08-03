@@ -1,5 +1,10 @@
-UITextView의 contentOffset 오류
-==============================
+---
+title: "UITextView의 contentOffset 오류"
+layout: post
+category : dev.client
+tags : [ios7, uitextview]
+---
+{% include JB/setup %}
 
 개요
 ----

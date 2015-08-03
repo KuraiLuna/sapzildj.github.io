@@ -1,5 +1,10 @@
-Xcode6 Simulator App 변경 사항
-================================
+---
+title: "Xcode6 Simulator App 변경 사항"
+layout: post
+category : dev.client
+tags : [ios, xcode6, simulator]
+---
+{% include JB/setup %}
 
 iOS 지원범위 축소
 --------------

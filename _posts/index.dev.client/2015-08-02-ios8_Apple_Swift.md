@@ -1,5 +1,10 @@
-Apple Swift
-===========
+---
+title: "Apple Swift"
+layout: post
+category : dev.client
+tags : [ios8, swift]
+---
+{% include JB/setup %}
 
 개요
 ----

@@ -1,5 +1,10 @@
-legacy 프로젝트에 ARC 적용
-======================
+---
+title: "legacy 프로젝트에 ARC 적용"
+layout: post
+category : dev.client
+tags : [ios, arc]
+---
+{% include JB/setup %}
 
 개요
 ----

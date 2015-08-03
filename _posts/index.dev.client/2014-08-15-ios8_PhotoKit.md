@@ -1,5 +1,11 @@
-PhotoKit
-========
+---
+title: "PhotoKit"
+layout: post
+category : dev.client
+tags : [ios8, photokit]
+---
+{% include JB/setup %}
+
 
 iOS8 소개 페이지
 ----------------

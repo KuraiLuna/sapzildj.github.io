@@ -1,5 +1,10 @@
-UITextView의 contentOffset 오류
-==============================
+---
+title: "UITableViewCell > UITableViewCellContentView의 subviews 변경 사항"
+layout: post
+category : dev.client
+tags : [ios7, uitableviewcell]
+---
+{% include JB/setup %}
 
 설명
 ----

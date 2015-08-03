@@ -1,5 +1,10 @@
-iOS Album image 첫번째의 thumbnail이 회색으로 나오는 현상
-=================================================
+---
+title: "iOS Album image 첫번째의 thumbnail이 회색으로 나오는 현상"
+layout: post
+category : dev.client
+tags : [ios6, alassetslibrary]
+---
+{% include JB/setup %}
 
 재현 상황 설명
 --------------
