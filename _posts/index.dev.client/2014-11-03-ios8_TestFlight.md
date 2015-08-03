@@ -1,5 +1,10 @@
-TestFlight
-===========
+---
+title: "TestFlight"
+layout: post
+category : dev.client
+tags : [ios8, testflight]
+---
+{% include JB/setup %}
 
 개요
 ---

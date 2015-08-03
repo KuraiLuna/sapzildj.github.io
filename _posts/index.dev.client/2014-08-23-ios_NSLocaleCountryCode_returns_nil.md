@@ -1,5 +1,10 @@
-NSLocaleCountryCode nil 리턴
-============================
+---
+title: "NSLocaleCountryCode nil 리턴"
+layout: post
+category : dev.client
+tags : [ios, nslocalecountrycode]
+---
+{% include JB/setup %}
 
 현상
 ---
