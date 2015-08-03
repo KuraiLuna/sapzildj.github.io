@@ -1,5 +1,10 @@
-CentOS5.10에 nginx 설치
-===============
+---
+title: "CentOS5.10에 nginx 설치"
+layout: post
+category : dev.server
+tags : [centos, install, nginx]
+---
+{% include JB/setup %}
 
 서버 환경 확인
 --------------

@@ -1,5 +1,10 @@
-MongoDB Map-Reduce
-==================
+---
+title: "MongoDB Map-Reduce"
+layout: post
+category : dev.server
+tags : [centos, mapreduce, mongodb]
+---
+{% include JB/setup %}
 
 개요
 ----

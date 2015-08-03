@@ -1,5 +1,10 @@
-MongoDB 설치
-===========
+---
+title: "MongoDB 설치"
+layout: post
+category : dev.server
+tags : [centos, install, mongodb]
+---
+{% include JB/setup %}
 
 개요
 ----

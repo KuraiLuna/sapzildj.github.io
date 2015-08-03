@@ -1,5 +1,10 @@
-Python web framework django 설치
-===============================
+---
+title: "Python web framework django 설치"
+layout: post
+category : dev.server
+tags : [python, django]
+---
+{% include JB/setup %}
 
 설치 환경
 -------
