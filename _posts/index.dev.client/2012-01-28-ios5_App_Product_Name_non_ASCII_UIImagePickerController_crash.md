@@ -1,5 +1,10 @@
-app의 Product Name에 non ASCII 문자가 들어가있으면 UIImagePickerController crash
-==========================================================================
+---
+title: "app의 Product Name에 non ASCII 문자가 들어가있으면 UIImagePickerController crash"
+layout: post
+category : dev.client
+tags : [ios5, uiimagepickercontroller]
+---
+{% include JB/setup %}
 
 개요
 ----

@@ -1,5 +1,10 @@
-"UIViewController presentModalViewController:animated:" deplicated됨.
-====================================================================
+---
+title: "UIViewController presentModalViewController:animated: deplicated됨"
+layout: post
+category : dev.client
+tags : [ios5, presentmodalviewcontroller]
+---
+{% include JB/setup %}
 
 개요
 ----

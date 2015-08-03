@@ -1,5 +1,10 @@
-ALAssetRepresentation fullScreenImage의 orientation
-===================================================
+---
+title: "ALAssetRepresentation fullScreenImage의 orientation"
+layout: post
+category : dev.client
+tags : [ios5, alassetslibrary]
+---
+{% include JB/setup %}
 
 개요
 ----

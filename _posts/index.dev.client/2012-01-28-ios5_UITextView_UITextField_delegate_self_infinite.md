@@ -1,5 +1,10 @@
-UITextView, UITextField 객체의 delegate를 스스로에게 하면 무한루프
-==========================================================
+---
+title: "UITextView, UITextField 객체의 delegate를 스스로에게 하면 무한루프"
+layout: post
+category : dev.client
+tags : [ios5, uitextview, uitextfield]
+---
+{% include JB/setup %}
 
 개요
 ----

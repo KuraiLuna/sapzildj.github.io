@@ -1,5 +1,10 @@
-ALAsset lifetime
-================
+---
+title: "ALAsset lifetime"
+layout: post
+category : dev.client
+tags : [ios5, alassetslibrary]
+---
+{% include JB/setup %}
 
 개요
 ----

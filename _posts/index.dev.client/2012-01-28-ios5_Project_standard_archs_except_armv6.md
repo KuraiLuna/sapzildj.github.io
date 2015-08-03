@@ -1,5 +1,10 @@
-project 기본 archs에서 armv6가 빠짐
-===============================
+---
+title: "project 기본 archs에서 armv6가 빠짐"
+layout: post
+category : dev.client
+tags : [ios5, archs]
+---
+{% include JB/setup %}
 
 설명
 ----
