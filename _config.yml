@@ -8,8 +8,7 @@ highlighter: pygments
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
-title : sapzildj's Blog
-tagline: Site Tagline
+title : Sapzildj's Blog
 author :
   name : Dongjin Suh
   email : sapzildj@gmail.com
