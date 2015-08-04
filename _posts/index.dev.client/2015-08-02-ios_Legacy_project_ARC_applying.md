@@ -43,10 +43,10 @@ ARC 적용을 미루고 미루다 이제 겨우 프로젝트에 ARC를 적용하
             SET_PREF_OBJECT(kDeviceUuid, (__bridge_transfer NSString *)uuidStringRef);
 ```
 
--   assign으로 선언된 UIView property가 weak로 바뀌면서 생긴 compile
-    warning(warning: assigning retained object to weak property; object
-    will be released after assignment [-Warc-unsafe-retained-assign])
-    -   non-ARC
+-   assign으로 선언된 UIView property가 weak로 바뀌면서 생긴 compile warning(warning: assigning retained object to weak property;
+	object will be released after assignment [-Warc-unsafe-retained-assign]) 대응
+	
+-   non-ARC에서는 아래와 같았던 코드를
 
 ```objectivec
 @interface MyView : UIView
@@ -65,7 +65,8 @@ ARC 적용을 미루고 미루다 이제 겨우 프로젝트에 ARC를 적용하
 @end
 ```
 
--   -   ARC
+
+-   ARC에서는 아래와 같이 처리함.
 
 ```objectivec
 @interface MyView : UIView

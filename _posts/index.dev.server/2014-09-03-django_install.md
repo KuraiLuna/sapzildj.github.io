@@ -14,9 +14,11 @@ pip 설치
 -------
 <https://bootstrap.pypa.io/get-pip.py>를 다운로드해서 root 권한으로 실행.
 이미 설치되어 있다면 Skip.
+
 ```bash
 sudo python get-pip.py
 ```
+
 ```bash
 Downloading/unpacking pip
 	Downloading pip-1.5.6-py2.py3-none-any.whl (1.0MB): 1.0MB downloaded
@@ -27,9 +29,11 @@ Cleaning up...
 	
 django 설치
 ----------
+
 ```bash
 sudo pip install Django
 ```
+
 ```bash
 Downloading/unpacking Django
 	Downloading Django-1.6.6-py2.py3-none-any.whl (6.7MB): 6.7MB downloaded
@@ -40,6 +44,7 @@ Cleaning up...
 
 설치 확인
 -------
+
 ```python
 Python 2.7.5 (default, Mar  9 2014, 22:15:05) 
 [GCC 4.2.1 Compatible Apple LLVM 5.0 (clang-500.0.68)] on darwin

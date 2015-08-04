@@ -9,6 +9,7 @@ tags : [ios, nslocalecountrycode]
 현상
 ---
 iOS에서 사용자 Device의 설정된 국가를 알기 위해서 아래와 같이 처리하곤 한다.
+
 ```objectivec
 NSString* country = [[NSLocale currentLocale] objectForKey:NSLocaleCountryCode];
 ```
