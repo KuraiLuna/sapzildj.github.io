@@ -105,8 +105,8 @@ JB :
   # Set 'provider' to false to turn analytics off globally.
   #        
   analytics :
-    provider : google-universal
-    google-universal : 
+    provider : google_universal
+    google_universal : 
         tracking_id : 'UA-32799715-3'
         domain: 'github.com'
 
