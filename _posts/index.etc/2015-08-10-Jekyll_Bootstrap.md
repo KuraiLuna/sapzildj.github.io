@@ -83,6 +83,7 @@ _includes/JB/analytics 파일을 아래와 같은 식으로 수정한다.
 ```
 
 그리고 _config.xml을 아래와 같이 수정한다.
+
 ```
    analytics :
     provider : googleUA
