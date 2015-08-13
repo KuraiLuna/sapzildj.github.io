@@ -10,6 +10,7 @@ issue 발생
 ---------
 
 iOS8에서 NSCachesDirectory에 있는 이미지 파일을 상대 경로로 대략 아래와 같이 로드했을 때 nil이 return 됨.
+
 ```objectivec
 [UIImage imageNamed:../Library/Caches/a@2x.png];
 ```
