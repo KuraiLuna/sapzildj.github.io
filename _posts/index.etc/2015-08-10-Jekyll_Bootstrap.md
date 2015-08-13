@@ -92,5 +92,18 @@ _includes/JB/analytics 파일을 아래와 같은 식으로 수정한다.
 
 ```
 
+sitemap.xml
+-----------
+_config.xml에 아래와 같이 추가해주면, 호스트/sitemap.xml 주소에 사이트맵을 자동으로 만들어준다.
 
-Last Updated = 2015년 8월 10일 오전 4시 29분 46초 GMT+9
+```
+gems:
+  - jekyll-sitemap
+```
+
+robots.txt
+----------
+검색엔진 로봇이 참고할 수 있도록 robots.txt를 만들어둔다.
+[GitHub Pages 블로그 네이버(NAVER) 검색등록하기](http://blog.saltfactory.net/naver/register-with-github-pages-to-naver-search-engine.html)를 참고.
+
+Last Updated = 2015년 8월 13일 오후 11시 4분 40초 GMT+9
