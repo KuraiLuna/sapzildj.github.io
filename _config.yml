@@ -4,13 +4,12 @@ permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: pygments
-
-# In addition to the defaults mentioned above, 
-# you can also turn on recognition of Github Flavored Markdown 
-# by passing an input option with a value of “GFM”.
-kramdown:
-  input: GFM
   
+# code highlight
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "autolink", "fenced_code_blocks", "strikethrough"]
+
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
 #
