@@ -14,7 +14,9 @@ tags : [application, github.io]
 GitHub Page
 -----------
 이미 많은 분들이 GitHub Page 기능을 사용하고 계시고 사용 방법에 대해서도 상세하게 설명하고 계시므로 참고했던 링크만 추가한다.
+
 [GitHub의 페이지 기능 이용하기](https://dogfeet.github.io/articles/2012/github-pages.html)
+
 [지킬로 깃허브에 무료 블로그 만들기](https://nolboo.github.io/blog/2013/10/15/free-blog-with-github-jekyll/)
 
 
@@ -63,12 +65,33 @@ Jekyll을 설치하고 실행한 후에 <http://localhost:4000> 으로 들어가
 
 GitHub Flavored Markdown
 ------------------------
-[GFM](<https://help.github.com/articles/github-flavored-markdown/>)을 사용하기 위해서는 _config.xml에 아래 내용을 추가한다.
+코드 하이라이트를 비롯한 [GFM](<https://help.github.com/articles/github-flavored-markdown/>)을 사용하기 위해서는 _config.xml을 아래와 같이 수정한다.
 
 ```
-kramdown:
-  input: GFM
+markdown: redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "tables", "autolink", "fenced_code_blocks", "strikethrough"]
 ```
+
+참고로 markdown: kramdown을 사용하는 경우에는 GFM의 \`\`\`을 이용한 코드 하이라이트가 되지 않는다.
+
+[Jekyll 매뉴얼](http://jekyllrb.com/docs/configuration/)을 참고하여 input: GFM 으로도 해봤지만, 
+\`\`\`코드 하이라이트는 되지 않았고 <% highlight %>문법을 써야 했다. 그래서 그냥 redcarpet을 추천한다.
+
+<http://ajoz.github.io/2014/06/29/i-want-my-github-flavored-markdown/>에서도 redcarpet을 추천하고 있다.
+
+그 다음엔 css 파일을 추가해야 하는데, <http://stackoverflow.com/questions/6761990/highlight-with-jekyll-and-pygments-doesnt-works>를 참고하여
+
+```bash
+$ pygmentize -S default -f html > css/pygments/default.css
+```
+
+와 같은 식으로 css파일을 만들고 _layout/default.html에서 아래처럼 css를 연결한다.
+
+```html
+<link rel="stylesheet" href="/css/pygments/default.css">
+```
+
 
 Google Analytics(UA)
 --------------------
@@ -106,4 +129,39 @@ robots.txt
 검색엔진 로봇이 참고할 수 있도록 robots.txt를 만들어둔다.
 [GitHub Pages 블로그 네이버(NAVER) 검색등록하기](http://blog.saltfactory.net/naver/register-with-github-pages-to-naver-search-engine.html)를 참고.
 
-Last Updated = 2015년 8월 13일 오후 11시 4분 40초 GMT+9
+추가로 참고할 만한 웹 페이지
+-----------------------------
+Github Page에서 사용하고 있는 모듈 버전 = https://pages.github.com/versions/ 
+
+이 글 작성 시점에는 이랬다.
+
+```
+GitHub Pages uses the following dependencies and versions:
+Dependency	Version
+jekyll	2.4.0
+jekyll-coffeescript	1.0.1
+jekyll-sass-converter	1.3.0
+kramdown	1.5.0
+maruku	0.7.0
+rdiscount	2.1.7
+redcarpet	3.3.2
+RedCloth	4.2.9
+liquid	2.6.2
+pygments.rb	0.6.3
+jemoji	0.5.0
+jekyll-mentions	0.2.1
+jekyll-redirect-from	0.8.0
+jekyll-sitemap	0.8.1
+jekyll-feed	0.3.1
+ruby	2.1.1
+github-pages	39
+html-pipeline	1.9.0
+sass	3.4.16
+safe_yaml	1.0.4
+```
+
+Github Page에서 Jekyll 사용 방법 = https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
+
+Github Page의 Repository metadata = https://help.github.com/articles/repository-metadata-on-github-pages/
+
+Last Updated = 2015년 8월 24일 오전 3시 8분 22초 GMT+9
