@@ -112,7 +112,25 @@ addClip을 하기 전에 CGContextSaveGState();을 호출했다가 addClip을 �
 }
 ```
 
-참고로 마스크로 덮히는 부분에는 layer의 opacity가 제대로 먹히지 않았다.
+opacity가 먹힌 마스크 영역 적용하기
+-----------------------------
+
+위 방식을 사용하면 마스크로 덮히는 부분에 layer의 opacity를 사용할 수가 없다.
+배경이 비치는 마스크로 만들기 위해서는 fillRule을 kCAFillRuleEvenOdd로 사용해서 만들 수가 있다.
+
+```objectivec
+// UIView에 마스크 영역 적용하기.
++ (void)applyMaskLayerToView
+{
+    CAShapeLayer* maskLayer = [CAShapeLayer layer];
+    maskLayer.frame = self.view.bounds;
+	
+	UIBezierPath* maskPath = [self makeMaskPath];
+	maskLayer.path = [maskPath CGPath];
+	
+	self.view.layer.mask = maskLayer;
+}
+```
 
 
 
