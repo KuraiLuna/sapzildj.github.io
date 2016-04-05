@@ -36,10 +36,44 @@ changes to assets, observing changes made by other apps, and resumable
 editing of asset content.
 ```
 
-설명
+개요
 ----
 
-apple에서 만든 SDK 중 최악으로 생각되는 ALAssetsLibrary를 개선하다가
-결국 apple에서 포기하고 새로 API를 만들었다!
+Apple에서 만든 SDK 중 최악으로 생각되는 ALAssetsLibrary를 포기하고 결국 완전히 새로운 PhotoKit이 나왔다.
+PhotoKit 관련 Trouble Shooting 및 느낀 점을 써본다.
 
-아직 Beta SDK를 못깔아봐서 테스트를 못해봤지만 정말 기대된다!
+PHImageManager의 requestImageForAsset:targetSize:contentMode:options:resultHandler 메소드
+-------------------------------------------------------------------------------------
+# iOS8에서 targetSize에 따라 1px 녹색선이 생김.
+예를 들어 {723, 964} 이미지는 options가 뭐든 간에 오른쪽에 녹색선이 하나 생김.
+
+# resultHandler 호출 횟수
+(void (^)(UIImage *__nullable result, NSDictionary *__nullable info))resultHandler
+
+PHImageRequestOptionsDeliveryMode
+---------------------------------
+DeliveryMode를 로그로 찍으면 
+- PHImageRequestOptionsDeliveryModeOpportunistic = ask+fst
+- PHImageRequestOptionsDeliveryModeHighQualityFormat = ask
+- PHImageRequestOptionsDeliveryModeFastFormat = fst
+즉, Opportunistic는 HighQualityFormat와 FastFormat의 OR임.
+
+PHImageRequestOptionsDeliveryModeOpportunistic
+----------------------------------------------
+항상 여러번 resultHandler가 불리는 것은 아니다. requestImage 호출이 몰렸을 때만 FastFormat Image를 준다.
+
+Video의 Thumbnail
+-----------------
+경우에 따라 requestImage를 하면 resultHandler의 결과에서 image가 nil일 때가 있다.
+retry를 하면 image가 내려온다;
+
+iCloud
+------
+다운받지 않은 iCloud 이미지/영상은 resultHandler의 결과에서 image가 nil을 준다.
+게다가 syncronous=YES로 requestImage 호출을 하면 다운받을 때까지 앱이 먹통이 된다.
+
+느낀 점
+-------
+- ALAssetsLibrary에 비하면 엄청나게 안정적이다.
+- 성능은 CoreData의 한계 때문인지 그렇게 좋은 것 같지는 않다.
+- Apple Album앱이 정말 PhotoKit API로만 만들었을까?? 어떻게 저 성능이 나오지?
