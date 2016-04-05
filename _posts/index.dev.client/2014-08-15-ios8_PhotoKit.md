@@ -42,6 +42,11 @@ editing of asset content.
 Apple에서 만든 SDK 중 최악으로 생각되는 ALAssetsLibrary를 포기하고 결국 완전히 새로운 PhotoKit이 나왔다.
 PhotoKit 관련 Trouble Shooting 및 느낀 점을 써본다.
 
+Album PosterImage
+------------------
+ALAssetsGroup의 posterImage와 같은 기능이 없다. 그냥 fetch해와서 requestImage로 꺼내와야 한다.
+http://stackoverflow.com/questions/28164778/how-to-fetch-album-poster-image-using-photo-kit 참고.
+
 PHImageManager의 requestImageForAsset:targetSize:contentMode:options:resultHandler 메소드
 -------------------------------------------------------------------------------------
 # iOS8에서 targetSize에 따라 1px 녹색선이 생김.
