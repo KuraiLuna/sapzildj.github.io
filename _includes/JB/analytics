@@ -5,10 +5,8 @@
 {% case site.JB.analytics.provider %}
 {% when "gauges" %}
   {% include JB/analytics-providers/gauges %}
-{% when "google_classic" %}
-  {% include JB/analytics-providers/google-classic %}
-{% when "google_universal" %}
-  {% include JB/analytics-providers/google-universal %}
+{% when "google" %}
+  {% include JB/analytics-providers/google %}
 {% when "getclicky" %}
   {% include JB/analytics-providers/getclicky %}
 {% when "mixpanel" %}

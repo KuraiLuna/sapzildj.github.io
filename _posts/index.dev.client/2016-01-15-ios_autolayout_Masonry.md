@@ -61,7 +61,7 @@ UIView* anotherView; // 있다고 가정.
 -------
 - AutoLayout을 정말 가독성 좋게 사용할 수 있게 해준다.
 - 필수로 필요한 기능은 이미 다 있는 것 같다.
-
+- *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '*** +[NSLayoutConstraint constraintWithItem:attribute:relatedBy:toItem:attribute:multiplier:constant:]: Invalid pairing of layout attributes' 를 보지 않을 수 있도록 모듈 자체에서 Validation이 많이 필요할 듯 싶다.
 
 알아둘 만한 내용
 ----------------
