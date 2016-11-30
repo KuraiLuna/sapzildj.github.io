@@ -2,7 +2,7 @@
 title: "Xcode8, Swift3 적용"
 layout: post
 category : dev.client
-tags : [ios, autolayout, masonry, snapkit]
+tags : [ios, xcode8, swift3]
 ---
 {% include JB/setup %}
 
