@@ -11,14 +11,16 @@ tags : [ios, autolayout, masonry, snapkit]
 
 iOS6부터 AutoLayout이 나왔지만, iOS6 하위 버전에서는 안돌아간다는 핑계로 적용을 안하고 있었는데 이제 왠만한 앱은 최소 iOS7이상만 지원하고 있는 상황으로 AutoLayout을 적용하지 않을 이유가 없어졌다.
 그래서 코드로 AutoLayout을 적용하는 방법을 알아보니 코드량도 많고 가독성도 굉장히 떨어진다.
-(https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)
+ [참고](https://developer.apple.com/library/ios/documentation/UserExperience/Conceptual/AutolayoutPG/ProgrammaticallyCreatingConstraints.html)
 VFL(Visual Format Language)이란 게 있긴 하지만 VFL을 모르는 사람이 봤을 때 이것은 암호나 마찬가지인 것 같다.
 또한, AutoLayout관련 기능도 iOS버전을 타는 것들이 좀 있다
 예를 들면 NSLayoutConstraint에서 아래 메소드들도 iOS8이상이다.
+
 ```objectivec
  + (void)activateConstraints:(NSArray<NSLayoutConstraint *> *)constraints NS_AVAILABLE(10_10, 8_0);
  + (void)deactivateConstraints:(NSArray<NSLayoutConstraint *> *)constraints NS_AVAILABLE(10_10, 8_0);
 ```
+
 iOS AutoLayout 관련 Framework
 --------------------------------
 
@@ -29,7 +31,7 @@ iOS AutoLayout 기능을 Wrapping한 Framework이 있을 것 같아서 찾아보
  - [KeepLayout](https://github.com/iMartinKiss/KeepLayout)
  - [ReactiveCocoaLayout](https://github.com/ReactiveCocoa/ReactiveCocoaLayout)
 
-그리고 [CTAssetsPickerController](https://github.com/chiunam/CTAssetsPickerController) 에서 사용하는 
+그리고 [CTAssetsPickerController](https://github.com/chiunam/CTAssetsPickerController) 에서 사용하는
 - https://github.com/PureLayout/PureLayout
 
 이 중에서 [Masonry](https://github.com/Masonry/Masonry)를 실제 적용해봤다.
@@ -45,14 +47,14 @@ UIView* superview = self.superview;
 UIView* anotherView; // 있다고 가정.
 [self mas_updateConstraints:^(MASConstraintMaker *make) {
 	make.center.equalTo(superview); // 부모뷰의 정가운데
-	
-	make.centerX.equalTo(superview); // 부모뷰의 가로 방향 가운데	
+
+	make.centerX.equalTo(superview); // 부모뷰의 가로 방향 가운데
 	make.centerY.equalTo(superview); // 부모뷰의 세로 방향 가운데		
-	
+
 	make.bottom.equalTo(0); // 부모뷰의 하단에 붙임.
-	
+
 	make.top.equalTo(0); // 부모뷰의 상단에 붙임.
-	
+
 	make.left.equalTo(anotherView).offset(10); // anotherView의 left + 10
 }
 ```

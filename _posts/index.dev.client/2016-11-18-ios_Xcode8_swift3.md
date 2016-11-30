@@ -53,7 +53,7 @@ DispatchQueue(label: name, attributes: [.serial, .qosDefault])
  - closure가 기본적으로 non-escaping기반으로 동작됨. 아마, non-escaping일 때는 Stack 메모리에서 갖고있고, escaping일 때는 Heap 메모리에서 갖고 있으려고 그런 것으로 보인다. [참고](http://stackoverflow.com/questions/39063499/updating-closures-to-swift-3-escaping/)
  - Optional Int Type Compare 하는 코드에 대해 Xcode Auto converting을 하면 아래와 같은 코드가 추가됨. Optional에 대한 unwrapping을 해주고 비교하도록 수정해야 함.
 
- ```swift
+```swift
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -83,10 +83,10 @@ fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
 APNS 관련 처리
 ------------
  - Xcode8 Capabilities에서 ON
- 	- Xcode8부터는 설정을 키지 않으면 Push가 동작하지 않는다. [참고1](http://stackoverflow.com/questions/39266891/xcode-8-push-notification-capabilities-and-entitlements-file-setting), [참고2](https://eladnava.com/send-push-notifications-to-ios-devices-using-xcode-8-and-swift-3/)
- 	- 신기한 것은 entitlements 파일에 aps-environment값으로 production이 아니라 development만 입력해놔도 된다;
+  - Xcode8부터는 설정을 키지 않으면 Push가 동작하지 않는다. [참고1](http://stackoverflow.com/questions/39266891/xcode-8-push-notification-capabilities-and-entitlements-file-setting), [참고2](https://eladnava.com/send-push-notifications-to-ios-devices-using-xcode-8-and-swift-3/)
+  - 신기한 것은 entitlements 파일에 aps-environment값으로 production이 아니라 development만 입력해놔도 된다;
  - APNS token data.description의 return 값 변경. [참고](http://stackoverflow.com/questions/39495391/swift-3-device-tokens-are-now-being-parsed-as-32bytes)
- 	- swift2.2에서는 return값이 hexString이라서 편하게 사용하고 있었는데, 값자기 32BYTES 로 return을 하고 있다 ㅜㅜ. hexString을 직접 구현해서 처리하면 됨.
+  - swift2.2에서는 return값이 hexString이라서 편하게 사용하고 있었는데, 값자기 32BYTES 로 return을 하고 있다 ㅜㅜ. hexString을 직접 구현해서 처리하면 됨.
 - iOS10 부터 UserNotification.framework를 사용할 수 있고, Rich message push가 가능하다. [참고](https://blog.pusher.com/how-to-send-ios-10-notifications-using-the-push-notifications-api/)
 	- 하지만 필요없는 경우 iOS10 별도 처리는 안해도 됨.
 
