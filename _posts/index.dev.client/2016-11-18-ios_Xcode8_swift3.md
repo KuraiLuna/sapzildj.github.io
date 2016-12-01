@@ -116,15 +116,6 @@ make.center.equalToSuperview()
 - [Geometry](https://github.com/sapzildj/Geometry)
     - 개발하신 분이 바쁘신지 Swift3 Migration을 안해주셔서 다른 분이 작업하신 것을 fork해서 CoreGraphics 관련 변수명 충돌 부분만 수정해서 사용 중이다.
 
-iOS10에서 AVVideoCompositionCoreAnimationTool을 사용했을 때 AVPlayer Bug
--------------------------------------------------------------------
-이거 완전 심각한 버그인데 iOS10.1.1까지도 아직 안고쳐졌다. workaround도 아직 못찾았다.
-iOS에서 Video 편집은 보통 AVFoundation을 이용해서 하는데, 갑자기 iOS10부터 AVMutableVideoComposition의 AVVideoCompositionCoreAnimationTool을 사용해서 ExportSession을 돌리고, 이 파일을 PhotoKit을 이용해서 Camera Roll에 저장시킨다.
-그리고 나서, iOS 기본 앨범 앱을 왔다갔다 하면 갑자기 내 앱 쪽의 AVPlayerLayer가 검게 보인다.
-검게 보일 때는 기본 앨범 앱에서도 해당 Video는 검게 보인다. 그러다가 갑자기 어느 순간 다시 보이기 시작한다.
-[참고1](http://stackoverflow.com/questions/39760147/ios-10-0-10-1-avplayerlayer-doesnt-show-video-after-using-avvideocomposition),
-[참고2](http://stackoverflow.com/questions/39560386/avplayer-playback-fails-while-avassetexportsession-is-active-as-of-ios-10/39786820#39786820)
-
 GLKit
 -----
 iOS10에서는 투명 이미지를 텍스처로 로드시킬 때 GLKTextureLoader의 GLKTextureLoaderApplyPremultiplication 옵션이 기존(iOS8~9)과 반대로 작동한다.
@@ -152,8 +143,22 @@ GL Shdaer에서는 Premultiplied기반으로 처리를 하면 된다.
 }
 ```
 
+iOS10에서 AVVideoCompositionCoreAnimationTool을 사용했을 때 AVPlayer Bug
+-------------------------------------------------------------------
+이거 완전 심각한 버그인데 iOS10.1.1까지도 아직 안고쳐졌다. workaround도 아직 못찾았다.
+iOS에서 Video 편집은 보통 AVFoundation을 이용해서 하는데, 갑자기 iOS10부터 AVMutableVideoComposition의 AVVideoCompositionCoreAnimationTool을 사용해서 ExportSession을 돌리고, 이 파일을 PhotoKit을 이용해서 Camera Roll에 저장시킨다.
+그리고 나서, iOS 기본 앨범 앱을 왔다갔다 하면 갑자기 내 앱 쪽의 AVPlayerLayer가 검게 보인다.
+검게 보일 때는 기본 앨범 앱에서도 해당 Video는 검게 보인다. 그러다가 갑자기 어느 순간 다시 보이기 시작한다.
+[참고1](http://stackoverflow.com/questions/39760147/ios-10-0-10-1-avplayerlayer-doesnt-show-video-after-using-avvideocomposition),
+[참고2](http://stackoverflow.com/questions/39560386/avplayer-playback-fails-while-avassetexportsession-is-active-as-of-ios-10/39786820#39786820)
+
+iOS10 디바이스에서 권한 관련 Description
+----------------------------------
+- iOS10부터는 앱에서 사용하는 디바이스에 대한 권한들에 대한 설명을 Info.plist에 모두 넣어줘야 한다. 안넣어주면 해당 기능을 사용하려고 할 때 크래시가 난다. [참고](http://stackoverflow.com/questions/39465687/nscamerausagedescription-in-ios-10-0-runtime-crash/39680377#39680377)
+- 다국어로 적용하고 싶으면 언어별로 InfoPlist.strings를 만들어서 넣어주면 된다. [참고](http://stackoverflow.com/questions/38954885/ios-10-and-permissions-localization-description)
+- InfoPlist.strings만 만들어서 넣고 Info.plist에는 안넣으면 앱스토어 등록시 Invalid Binary로 처리가 된다. 꼭 Info.plist에는 Description을 넣어줘야 한다.
 
 느낀 점
 -------
-iOS10은 개발자를 넘 고통스럽게 했다...베타 버전부터...
-제발 animationTool은 좀 고쳐주면 좋겠다. 안고쳐주면 CustomCompositor로 다 구현해야하는 데...흑흑
+- iOS10은 개발자를 넘 고통스럽게 했다...베타 버전부터...
+- 제발 animationTool은 좀 고쳐주면 좋겠다. 안고쳐주면 CustomCompositor로 다 구현해야하는 데...흑흑
